@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Siphon Stream Finder",
+  "version": "1.0.0",
+  "description": "Find downloadable video/audio streams (.m3u8 / .mpd) on the current page and copy them into Siphon.",
+  "permissions": ["webRequest", "storage", "tabs"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Siphon Stream Finder",
+    "default_icon": {
+      "16": "icon-128.png",
+      "48": "icon-128.png",
+      "128": "icon-128.png"
+    }
+  },
+  "icons": {
+    "16": "icon-128.png",
+    "48": "icon-128.png",
+    "128": "icon-128.png"
+  }
+}

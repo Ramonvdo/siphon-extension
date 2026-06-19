@@ -10,6 +10,12 @@
   <a href="https://github.com/Ramonvdo/siphon">Siphon desktop app</a>.
 </p>
 
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green" alt="License"></a>
+  <img src="https://img.shields.io/badge/Manifest-V3-blue" alt="Manifest V3">
+  <img src="https://img.shields.io/badge/browsers-Chrome%20%7C%20Edge%20%7C%20Firefox-blue" alt="Browsers">
+</p>
+
 ---
 
 It's the browser-side twin of Siphon's **Advanced Search** tab: a background

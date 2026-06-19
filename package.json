@@ -4,6 +4,16 @@
   "description": "Find downloadable video/audio streams (.m3u8 / .mpd) on the current page and send them to Siphon.",
   "private": true,
   "type": "module",
+  "keywords": [
+    "browser-extension",
+    "manifest-v3",
+    "hls",
+    "dash",
+    "m3u8",
+    "video",
+    "media",
+    "downloader"
+  ],
   "scripts": {
     "build": "node build.mjs"
   },

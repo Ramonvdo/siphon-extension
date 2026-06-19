@@ -12,6 +12,8 @@
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green" alt="License"></a>
+  <a href="https://github.com/Ramonvdo/siphon-extension/releases/latest"><img src="https://img.shields.io/github/v/release/Ramonvdo/siphon-extension" alt="Latest release"></a>
+  <a href="https://github.com/Ramonvdo/siphon-extension/releases"><img src="https://img.shields.io/github/downloads/Ramonvdo/siphon-extension/total" alt="Downloads"></a>
   <img src="https://img.shields.io/badge/Manifest-V3-blue" alt="Manifest V3">
   <img src="https://img.shields.io/badge/browsers-Chrome%20%7C%20Edge%20%7C%20Firefox-blue" alt="Browsers">
 </p>
@@ -35,6 +37,19 @@ lists them with **Copy** and **Send to Siphon** buttons.
 | Orion | WebKit | ⚠️ Best-effort — install the Chrome or Firefox build; depends on Orion's WebExtension support |
 | Safari | WebKit | ❌ Not supported — needs an Xcode app wrapper + Apple Developer account, and Safari's native HLS handling bypasses `webRequest` |
 
+## Download
+
+Grab the latest packaged build from the
+[**Releases**](https://github.com/Ramonvdo/siphon-extension/releases) page:
+
+| Browser | Package |
+|---|---|
+| **Chrome · Edge · Brave · Arc · Vivaldi** | [`siphon-extension-chrome.zip`](https://github.com/Ramonvdo/siphon-extension/releases/latest/download/siphon-extension-chrome.zip) |
+| **Firefox** | [`siphon-extension-firefox.zip`](https://github.com/Ramonvdo/siphon-extension/releases/latest/download/siphon-extension-firefox.zip) |
+
+Unzip it, then load it unpacked — see **Install** below. (Not published to web stores; you
+can also build the packages yourself with `npm run build`.)
+
 > **Disclaimer:** This extension is for **lawful, personal use only** — media you own or
 > have permission to download, and testing against **private platforms you control
 > yourself**. The author does not condone or promote unlawful use. Downloading copyrighted
@@ -46,13 +61,14 @@ lists them with **Copy** and **Send to Siphon** buttons.
 1. Go to `chrome://extensions` (or `edge://extensions`, `brave://extensions`,
    `arc://extensions`, `vivaldi://extensions`).
 2. Turn on **Developer mode** (top-right).
-3. Click **Load unpacked** and pick this `siphon-extension/` folder (or `dist/chrome/`
-   after building — see below).
+3. Click **Load unpacked** and pick the unzipped **chrome** folder from the
+   [downloaded zip](#download) (or this repo folder, or `dist/chrome/` after building).
 4. Pin the Siphon icon to the toolbar if you like.
 
 ## Install (Firefox)
 
-Firefox needs its own manifest, so build the packages first:
+Firefox needs its own manifest. Use the downloaded `siphon-extension-firefox.zip`
+(unzip it), or build the packages yourself:
 
 ```bash
 npm run build      # writes dist/chrome/ and dist/firefox/ (+ zips)
@@ -61,7 +77,8 @@ npm run build      # writes dist/chrome/ and dist/firefox/ (+ zips)
 Then:
 
 1. Go to `about:debugging#/runtime/this-firefox`.
-2. Click **Load Temporary Add-on…** and pick `dist/firefox/manifest.json`.
+2. Click **Load Temporary Add-on…** and pick the unzipped folder's `manifest.json`
+   (or `dist/firefox/manifest.json` after building).
 3. Open the add-on's details and **grant the host permission** when prompted —
    Firefox treats `<all_urls>` as opt-in for MV3.
 

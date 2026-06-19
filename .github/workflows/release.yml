@@ -1,0 +1,50 @@
+name: release
+
+# Builds the Chromium and Firefox extension packages and attaches their zips to a
+# draft GitHub Release.
+#
+# Usage: push a version tag, e.g.
+#   git tag v1.0.0 && git push origin v1.0.0
+# A *draft* release is created with both zips attached — review it, then publish.
+# You can also run it manually from the Actions tab (workflow_dispatch).
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Build extension packages
+        run: npm run build
+
+      - name: Draft GitHub Release with extension zips
+        uses: softprops/action-gh-release@v2
+        with:
+          draft: true
+          name: Siphon Stream Finder ${{ github.ref_name }}
+          body: |
+            ### Siphon Stream Finder ${{ github.ref_name }}
+
+            Browser extension packages — download, unzip, and load unpacked (see the README).
+
+            - **Chrome / Edge / Brave / Arc / Vivaldi:** `siphon-extension-chrome.zip`
+            - **Firefox:** `siphon-extension-firefox.zip`
+
+            > Not published to web stores. Lawful, personal use only — see DISCLAIMER.md.
+          files: |
+            dist/siphon-extension-chrome.zip
+            dist/siphon-extension-firefox.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

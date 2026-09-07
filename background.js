@@ -13,7 +13,7 @@
    ═══════════════════════════════════════════════════════════════ */
 
 if (typeof importScripts === 'function') {
-  importScripts('browser-polyfill.min.js');
+  importScripts('browser-polyfill.js');
 }
 
 const RX = /(\.m3u8|\.mpd|\.f4m)(\?|$)|[?&]format=m3u8|\/manifest(\/|\?|$)/i;

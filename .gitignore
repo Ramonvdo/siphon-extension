@@ -2,3 +2,12 @@ node_modules/
 dist/
 .DS_Store
 Thumbs.db
+
+# Kept local, deliberately.
+#
+# This repository is the extension's public face: what it is, how to run it, and
+# the source. The two below are about *shipping* it rather than using it, and
+# neither means anything to somebody who installs it. Both still live on the
+# maintainer's machine - untracked, not deleted.
+SUBMISSION.md
+store-assets/

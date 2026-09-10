@@ -14,8 +14,8 @@ This is a Manifest V3 extension with a minimal footprint:
 
 - **Permissions:** `webRequest` + `host_permissions: <all_urls>` are required to observe
   request URLs on any page and detect stream manifests; `storage` keeps the per-tab found
-  list in `chrome.storage.session`; `tabs` is used to know the active tab and reset the
-  list on navigation.
+  list in `chrome.storage.session`. That is all of them — no `tabs` permission, because
+  the extension reads only tab ids and never a tab's URL, title or favicon.
 - **No data leaves the device.** There is no backend, no analytics, and no remote endpoint.
 - **No content scripts and no `eval`.** The extension does not inject code into pages; it
   detects streams purely from network request URLs.

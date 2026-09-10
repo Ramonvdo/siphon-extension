@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "Siphon Stream Finder",
-  "version": "1.1.0",
-  "description": "Find downloadable video/audio streams (.m3u8 / .mpd) on the current page and copy them into Siphon.",
+  "version": "1.1.1",
+  "description": "Lists the HLS and DASH manifest URLs a page requests, so you can inspect or copy them.",
   "browser_specific_settings": {
     "gecko": {
       "id": "siphon-stream-finder@siphon.app",
@@ -16,8 +16,7 @@
   },
   "permissions": [
     "webRequest",
-    "storage",
-    "tabs"
+    "storage"
   ],
   "host_permissions": [
     "<all_urls>"

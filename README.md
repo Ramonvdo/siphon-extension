@@ -116,7 +116,10 @@ a `gecko` id).
 
 - `webRequest` + `<all_urls>` — to observe request URLs and spot manifests.
 - `storage` — per-tab found-stream lists (`storage.session`).
-- `tabs` — to know the active tab and reset the list on navigation.
+
+That is the whole list. Tracking the active tab and clearing a tab's list on
+navigation needs no `tabs` permission, because only tab **ids** are read — never
+a tab's URL, title or favicon.
 
 Nothing is sent anywhere; detection and storage are entirely local.
 
